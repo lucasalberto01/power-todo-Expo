@@ -1,6 +1,6 @@
 import { useNavigation, useTheme } from '@react-navigation/native'
 import React from 'react'
-import { ServiceAuthUser } from '../../service/api/AuthService'
+import { AuthService } from '../../service/api/AuthService'
 import { IUser } from '../../types/auth.type'
 import { Container, ContainerButton, ContainerText, ImageCircle, TextEmail, TextName } from './styles'
 
@@ -11,7 +11,7 @@ const Header: React.FC = () => {
 
     const handlerLoad = async () => {
         try {
-            const response = await ServiceAuthUser<IUser>()
+            const response = await AuthService.user()
             setUser(response.data)
         } catch (e) {
             console.log(e)

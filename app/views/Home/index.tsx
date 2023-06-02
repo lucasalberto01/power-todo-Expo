@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { useNavigation, useTheme } from '@react-navigation/native'
 import React from 'react'
 import EmptyTask from '../../components/EmptyTask'
-import { ServiceListList } from '../../service/api/ListService'
+import { ListService } from '../../service/api/ListService'
 import { IList } from '../../types/list.type'
 
 import { ButtonTask, Container, ContainerCreate, ContainerIcon, ContainerTask, TextTask } from './styles'
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
 
     const getContent = async () => {
         try {
-            const result = await ServiceListList()
+            const result = await ListService.list()
             setList(result.data)
         } catch (e) {
             console.log(e)
@@ -26,15 +26,19 @@ const Home: React.FC = () => {
         getContent()
     }, [])
 
-    const handlerNewTask = () => {
-        navigation.navigate('NewTask', {})
+    const handlerNewList = () => {
+        navigation.navigate('ListDetails', {})
+    }
+
+    const handlerList = (item: IList) => {
+        navigation.navigate('ListDetails', { item })
     }
 
     const renderList = () => {
         return (
             <>
                 {list.map((item) => (
-                    <ButtonTask key={item.id}>
+                    <ButtonTask key={item.id} onPress={() => handlerList(item)}>
                         <ContainerIcon>
                             <Ionicons name='list' size={24} color={item.color} />
                         </ContainerIcon>
@@ -52,11 +56,11 @@ const Home: React.FC = () => {
     return (
         <Container>
             <ContainerTask>{list.length > 0 ? renderList() : renderEmpty()}</ContainerTask>
-            <ContainerCreate onPress={handlerNewTask}>
+            <ContainerCreate onPress={handlerNewList}>
                 <ContainerIcon>
                     <Ionicons name='add' size={24} color='#fff' />
                 </ContainerIcon>
-                <TextTask>Adicionar lista</TextTask>
+                <TextTask>Nova lista</TextTask>
             </ContainerCreate>
         </Container>
     )

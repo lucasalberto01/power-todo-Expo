@@ -1,12 +1,12 @@
-import { useTheme } from '@react-navigation/native'
+import { useNavigation, useTheme } from '@react-navigation/native'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { FormTextInput } from '../../components/UiKit'
 import { Button } from '../../components/UiKit/Button'
-import { Card, Container, Title } from './styles'
-import { ServiceAuthLogin } from '../../service/api/AuthService'
+import { Card, Container, ContainerButton, TextOr, Title } from './styles'
+import { AuthService } from '../../service/api/AuthService'
 import { SessionContext } from '../../context/SessionContext'
 import { ISession } from '../../types/auth.type'
 
@@ -23,6 +23,11 @@ const schemaLogin = yup
     .required()
 
 const Login: React.FC = () => {
+    const navigation = useNavigation<any>()
+    const { setEvent, setSession, saveOnDevice, setInterceptor } = React.useContext(SessionContext)
+    const colors = useTheme()
+    const [isSubmitting, setIsSubmitting] = React.useState(false)
+
     const {
         handleSubmit,
         control,
@@ -35,14 +40,11 @@ const Login: React.FC = () => {
             password: '',
         },
     })
-    const { setEvent, setSession, saveOnDevice, setInterceptor } = React.useContext(SessionContext)
-    const colors = useTheme()
-    const [isSubmitting, setIsSubmitting] = React.useState(false)
 
     const onSubmit = (data: IFormData) => {
         setIsSubmitting(true)
 
-        ServiceAuthLogin<ISession>(data)
+        AuthService.login(data)
             .then(async (res) => {
                 await saveOnDevice(res.data)
                 setInterceptor(res.data.key)
@@ -62,6 +64,10 @@ const Login: React.FC = () => {
             })
     }
 
+    const onRegister = () => {
+        navigation.navigate('Register')
+    }
+
     return (
         <Container>
             <Card backgroundColor={colors.colors.card}>
@@ -70,7 +76,11 @@ const Login: React.FC = () => {
                 <FormTextInput label='Username' control={control} name='username' error={errors?.username?.message} />
                 <FormTextInput label='Password' control={control} name='password' error={errors?.password?.message} secureTextEntry />
 
-                <Button loading={isSubmitting} title='Login' onPress={handleSubmit(onSubmit)} />
+                <ContainerButton>
+                    <Button loading={isSubmitting} title='Login' onPress={handleSubmit(onSubmit)} />
+                    <TextOr color={colors.colors.text}>OR</TextOr>
+                    <Button title='Register' onPress={onRegister} />
+                </ContainerButton>
             </Card>
         </Container>
     )

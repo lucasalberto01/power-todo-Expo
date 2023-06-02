@@ -36,7 +36,6 @@ export const TextOr = styled.Text`
     margin: 10px 0;
     opacity: 0.5;
 `
-
 export const ContainerButton = styled.View`
     width: 100%;
     margin-top: 20px;

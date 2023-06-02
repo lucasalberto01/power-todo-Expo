@@ -1,10 +1,7 @@
 import { ITaskCreate } from '../../types/task.type'
 import { instance } from '../base'
 
-export async function TaskServiceCreate<T>(data: ITaskCreate) {
-    return instance.post<T>('api/task/', data)
-}
-
-export async function TaskServiceList<T>() {
-    return instance.get<T>('api/task/')
+export const TaskService = {
+    create: (listId: number, data: ITaskCreate) => instance.post('api/task/' + listId + '/', data),
+    list: (listId: number) => instance.get('api/task/' + listId),
 }
