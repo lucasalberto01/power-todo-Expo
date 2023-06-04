@@ -4,6 +4,12 @@
 
 Welcome to Awesome Todo List App! This is a simple and intuitive to-do list application built with React Native and Django, utilizing Expo to support both web and mobile platforms.
 
+## Live
+
+Front-web <https://power-todo.vercel.app/>
+
+API <https://power-todo.herokuapp.com/api>
+
 ## Features
 
 - Add, edit, and delete tasks
