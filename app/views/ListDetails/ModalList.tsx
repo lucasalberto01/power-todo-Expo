@@ -6,23 +6,26 @@ import { FormTextInput } from '../../components/UiKit'
 import { Button } from '../../components/UiKit/Button'
 import { ButtonContainer, CardModal, ContainerModal, TitleModal } from './styles'
 
+export type FormData = {
+    name: string
+}
 interface IProps {
     modalVisible: boolean
     cancelTask: () => void
-    confirmTask: (data: any) => void
+    confirmTask: (data: FormData) => void
     isSubmitting: boolean
     onChangeTitle: (title: string) => void
 }
 
-const ListDetailsModal: React.FC<IProps> = ({ modalVisible, cancelTask, confirmTask, isSubmitting, onChangeTitle }) => {
+const ModalList: React.FC<IProps> = ({ modalVisible, cancelTask, confirmTask, isSubmitting, onChangeTitle }) => {
     const colors = useTheme()
-    const { control, handleSubmit, watch } = useForm({
+    const { control, handleSubmit, watch } = useForm<FormData>({
         defaultValues: {
-            title: '',
+            name: '',
         },
     })
 
-    const title = watch('title')
+    const title = watch('name')
 
     React.useEffect(() => {
         if (title) onChangeTitle(title)
@@ -33,7 +36,7 @@ const ListDetailsModal: React.FC<IProps> = ({ modalVisible, cancelTask, confirmT
             <ContainerModal>
                 <CardModal backgroundColor={colors.colors.card}>
                     <TitleModal color={colors.colors.text}>Nova Lista</TitleModal>
-                    <FormTextInput control={control} name='title' label='Titulo' />
+                    <FormTextInput control={control} name='name' label='Titulo' />
                     <ButtonContainer>
                         <Button title='Cancelar' onPress={cancelTask} />
                         <Button loading={isSubmitting} title='Salvar' onPress={handleSubmit(confirmTask)} />
@@ -44,4 +47,4 @@ const ListDetailsModal: React.FC<IProps> = ({ modalVisible, cancelTask, confirmT
     )
 }
 
-export default ListDetailsModal
+export default ModalList

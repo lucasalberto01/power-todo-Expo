@@ -4,6 +4,7 @@ import styled from 'styled-components/native'
 export const Container = styled.View`
     padding: 10px;
     flex: 1;
+    align-items: center;
 `
 
 export const ContainerModal = styled.View`
@@ -17,6 +18,7 @@ export const CardModal = styled.View`
     width: 90%;
     background-color: ${({ backgroundColor }) => backgroundColor};
     padding: 15px;
+    max-width: 400px;
 `
 export const TitleModal = styled.Text`
     font-size: 20px;
@@ -63,3 +65,7 @@ export const ButtonTask = styled.TouchableOpacity`
 `
 
 export const CheckBoxBtn = styled(ExpoCheckbox)``
+
+export const ContainerRight = styled.TouchableOpacity`
+    padding: 15px;
+`

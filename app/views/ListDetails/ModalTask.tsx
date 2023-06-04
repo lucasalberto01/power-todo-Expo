@@ -19,7 +19,7 @@ type FormData = {
     title: string
 }
 
-const ListDetailsTask: React.FC<IProps> = ({ modalVisible = false, cancelTask, confirmTask, isSubmitting = false }) => {
+const ModalTask: React.FC<IProps> = ({ modalVisible = false, cancelTask, confirmTask, isSubmitting = false }) => {
     const colors = useTheme()
     const {
         handleSubmit,
@@ -47,4 +47,4 @@ const ListDetailsTask: React.FC<IProps> = ({ modalVisible = false, cancelTask, c
     )
 }
 
-export default ListDetailsTask
+export default ModalTask

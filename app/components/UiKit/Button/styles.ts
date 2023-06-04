@@ -8,6 +8,7 @@ export const ButtonContainer = styled(Touchable)`
     justify-content: center;
     height: 40px;
     border-radius: 4px;
+    font-weight: ${({ fontWeight }) => fontWeight};
 `
 
 export const ButtonText = styled.Text`

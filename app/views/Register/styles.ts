@@ -15,6 +15,7 @@ export const Card = styled.View`
     padding: 20px;
     margin-bottom: 10px;
     background-color: ${({ backgroundColor }) => backgroundColor};
+    max-width: 400px;
 `
 
 export const Title = styled.Text`

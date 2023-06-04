@@ -5,12 +5,15 @@ export const Container = styled.View`
     height: 64px;
     background-color: ${({ backgroundColor }) => backgroundColor};
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 0 16px;
 `
 
 export const ContainerButton = styled.TouchableOpacity`
+    width: 100%;
     flex-direction: row;
+    max-width: 400px;
+    padding: 10px;
 `
 
 export const ImageCircle = styled.Image`

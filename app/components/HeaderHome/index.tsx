@@ -4,7 +4,7 @@ import { AuthService } from '../../service/api/AuthService'
 import { IUser } from '../../types/auth.type'
 import { Container, ContainerButton, ContainerText, ImageCircle, TextEmail, TextName } from './styles'
 
-const Header: React.FC = () => {
+const HeaderHome: React.FC = () => {
     const navigation = useNavigation<any>()
     const colors = useTheme().colors
     const [user, setUser] = React.useState<IUser>({} as IUser)
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
     }, [])
 
     return (
-        <Container backgroundColor={colors.primary}>
+        <Container backgroundColor={colors.card}>
             <ContainerButton onPress={handlerProfile}>
                 <ImageCircle width={30} source={require('../../assets/checklist.png')} />
                 <ContainerText>
@@ -39,4 +39,4 @@ const Header: React.FC = () => {
     )
 }
 
-export default Header
+export default HeaderHome

@@ -57,6 +57,12 @@ const Register: React.FC = () => {
         setIsSubmitting(true)
 
         AuthService.create(data)
+            .then((res) => {
+                return AuthService.login({
+                    username: data.username,
+                    password: data.password1,
+                })
+            })
             .then(async (res) => {
                 await saveOnDevice(res.data)
                 setInterceptor(res.data.key)

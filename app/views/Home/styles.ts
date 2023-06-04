@@ -2,7 +2,21 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
     flex: 1;
+    align-items: center;
 `
+
+export const ContainerList = styled.View`
+    width: 100%;
+    max-width: 400px;
+    height: calc(100% - 51px);
+`
+
+export const ContainerWrapper = styled.View`
+    width: 100%;
+    flex: 1;
+    max-width: 400px;
+`
+
 export const ButtonTask = styled.TouchableOpacity`
     width: 100%;
     padding: 10px;
@@ -24,9 +38,6 @@ export const ContainerIcon = styled.View`
 export const ContainerTask = styled.View`
     width: 100%;
     height: calc(100% - 60px);
-    padding: 0 10px;
-    align-items: center;
-    margin-top: 10px;
 `
 
 export const ContainerCreate = styled.TouchableOpacity`
@@ -35,6 +46,4 @@ export const ContainerCreate = styled.TouchableOpacity`
     padding: 10px;
     align-items: center;
     flex-direction: row;
-    border-top-width: 1px;
-    border-top-color: #ffffff44;
 `

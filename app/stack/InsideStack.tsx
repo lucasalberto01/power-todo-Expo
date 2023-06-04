@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack'
-import Header from '../components/Header'
+import Header from '../components/HeaderHome'
 import { IList } from '../types/list.type'
 import Home from '../views/Home'
 import ListDetails from '../views/ListDetails'
