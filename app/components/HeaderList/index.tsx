@@ -3,7 +3,7 @@ import { useTheme } from '@react-navigation/native'
 import React from 'react'
 import { Container } from '../HeaderHome/styles'
 import { ContainerMax } from '../UiKit'
-import { ContainerHeader, ContainerIcon, ContainerTitle, TextTitle } from './styles'
+import { ContainerHeader, ContainerIcon, ContainerTitle, ContentGroup, TextTitle } from './styles'
 
 interface IProps {
     onDelete: () => void
@@ -17,12 +17,14 @@ const HeaderList: React.FC<IProps> = ({ onBack, onDelete, title }) => {
         <Container backgroundColor={colors.card}>
             <ContainerMax>
                 <ContainerHeader>
-                    <ContainerIcon onPress={onBack}>
-                        <Ionicons name='arrow-back' size={24} color={colors.text} />
-                    </ContainerIcon>
-                    <ContainerTitle>
-                        <TextTitle color={colors.text}>{title}</TextTitle>
-                    </ContainerTitle>
+                    <ContentGroup>
+                        <ContainerIcon onPress={onBack}>
+                            <Ionicons name='arrow-back' size={24} color={colors.text} />
+                        </ContainerIcon>
+                        <ContainerTitle>
+                            <TextTitle color={colors.text}>{title}</TextTitle>
+                        </ContainerTitle>
+                    </ContentGroup>
                     <ContainerIcon onPress={onDelete}>
                         <Ionicons name='trash-bin-outline' size={24} color={colors.text} />
                     </ContainerIcon>

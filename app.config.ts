@@ -1,6 +1,5 @@
-require('dotenv').config()
-
-module.exports = {
+import 'dotenv/config'
+export default {
     expo: {
         name: 'Power-Todo',
         slug: 'power-todo',
@@ -27,7 +26,7 @@ module.exports = {
             favicon: './assets/favicon.png',
         },
         extra: {
-            apiUrl: process.env.API_URL,
+            apiKey: 'AAAAA',
             eas: {
                 projectId: '8b609178-5387-4cda-8c4e-ccd96cafd3a9',
             },

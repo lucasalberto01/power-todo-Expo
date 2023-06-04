@@ -1,7 +1,8 @@
 import axios from 'axios'
-export const apiUrl = process.env.API_URL
+import { API_URL } from 'react-native-dotenv'
+
 export const instance = axios.create({
-    baseURL: apiUrl,
+    baseURL: API_URL,
     timeout: 30000,
     headers: {
         'Content-Type': 'application/json',

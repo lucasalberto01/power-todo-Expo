@@ -14,7 +14,6 @@ export const ContainerIcon = styled.TouchableOpacity`
 `
 
 export const ContainerTitle = styled.View`
-    width: 100%;
     height: 100%;
     justify-content: center;
     margin-left: 16px;
@@ -24,4 +23,8 @@ export const TextTitle = styled.Text`
     font-size: 18px;
     font-weight: bold;
     color: ${(props) => props.color};
+`
+
+export const ContentGroup = styled.View`
+    flex-direction: row;
 `
