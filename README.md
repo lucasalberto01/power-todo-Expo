@@ -33,9 +33,7 @@ Use [Expo Go](https://play.google.com/store/apps/details?id=host.exp.exponent)
 - Axios (<https://github.com/axios/axios>)
 - Yup (<https://github.com/jquense/yup>)
 - React-hook-form (<https://github.com/react-hook-form/react-hook-form>)
-- Django (<https://github.com/django/django>)
-- Django REST Framework (<https://github.com/encode/django-rest-framework>)
-- Mysql (<https://github.com/PyMySQL/mysqlclient>)
+
 
 ## Installation
 
