@@ -2,7 +2,7 @@ import styled from 'styled-components/native'
 
 export const ContainerHeader = styled.View`
     width: 100%;
-    height: 64px;
+    height: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -27,4 +27,5 @@ export const TextTitle = styled.Text`
 
 export const ContentGroup = styled.View`
     flex-direction: row;
+    align-items: center;
 `

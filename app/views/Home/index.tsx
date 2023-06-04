@@ -22,7 +22,7 @@ const Home: React.FC<IProps> = ({ route, navigation }) => {
             const result = await ListService.list()
             setList(result.data)
         } catch (e) {
-            console.log(e)
+            console.log('TESTE', e)
         } finally {
             console.log('finally')
         }

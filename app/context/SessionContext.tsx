@@ -78,7 +78,7 @@ export const SessionProvider: React.FC<IProps> = ({ children }) => {
         console.log('[OUTDOOR] - Set interceptor')
         instance.defaults.headers.common['Authorization'] = `Token ${key}`
         instance.interceptors.response.use((config) => {
-            console.log('[OUTDOOR] - Response', { config })
+            console.log('[OUTDOOR] - Response', config)
             if (config.status === 401 || config.status === 403) {
                 console.log('[OUTDOOR] - Token expirado')
                 setEvent('outdoor')

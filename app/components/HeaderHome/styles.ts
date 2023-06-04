@@ -2,11 +2,12 @@ import styled from 'styled-components/native'
 
 export const Container = styled.View`
     width: 100%;
-    height: 64px;
+    height: ${({ paddingTop }) => paddingTop + 60};
     background-color: ${({ backgroundColor }) => backgroundColor};
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-top: ${({ paddingTop }) => paddingTop};
 `
 
 export const ContainerButton = styled.TouchableOpacity`

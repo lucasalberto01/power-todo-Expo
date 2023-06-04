@@ -19,19 +19,6 @@ interface IProps {
     route: RouteProp<any, any>
 }
 
-interface IRightProps {
-    onPress: () => void
-}
-
-const HeaderRight: React.FC<IRightProps> = ({ onPress }) => {
-    const colors = useTheme()
-    return (
-        <ContainerRight onPress={onPress}>
-            <Ionicons name='trash-bin-outline' size={20} color={colors.colors.text} />
-        </ContainerRight>
-    )
-}
-
 const NewTask: React.FC<IProps> = ({ navigation, route }) => {
     const colors = useTheme()
 
@@ -96,7 +83,11 @@ const NewTask: React.FC<IProps> = ({ navigation, route }) => {
     }
     const confirmDelete = async () => {
         setIsSubmitting(true)
-        await ListService.delete(route.params.item.id)
+        try {
+            await ListService.delete(route.params.item.id)
+        } catch (e) {
+            console.log('DELETE', e)
+        }
         setIsSubmitting(false)
         setModalDelete(false)
         navigation.goBack()

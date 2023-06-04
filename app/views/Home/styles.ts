@@ -8,7 +8,6 @@ export const Container = styled.View`
 export const ContainerList = styled.View`
     width: 100%;
     max-width: 400px;
-    height: calc(100% - 51px);
 `
 
 export const ContainerWrapper = styled.View`
@@ -37,7 +36,6 @@ export const ContainerIcon = styled.View`
 
 export const ContainerTask = styled.View`
     width: 100%;
-    height: calc(100% - 60px);
 `
 
 export const ContainerCreate = styled.TouchableOpacity`

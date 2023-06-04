@@ -1,12 +1,15 @@
 import React from 'react'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import AppContainer from './AppContainer'
 import { SessionProvider } from './context/SessionContext'
 
 const Providers: React.FC = () => {
     return (
-        <SessionProvider>
-            <AppContainer />
-        </SessionProvider>
+        <SafeAreaProvider>
+            <SessionProvider>
+                <AppContainer />
+            </SessionProvider>
+        </SafeAreaProvider>
     )
 }
 

@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons'
 import { useTheme } from '@react-navigation/native'
 import React from 'react'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Container } from '../HeaderHome/styles'
 import { ContainerMax } from '../UiKit'
 import { ContainerHeader, ContainerIcon, ContainerTitle, ContentGroup, TextTitle } from './styles'
@@ -13,8 +14,10 @@ interface IProps {
 
 const HeaderList: React.FC<IProps> = ({ onBack, onDelete, title }) => {
     const colors = useTheme().colors
+    const insets = useSafeAreaInsets()
+
     return (
-        <Container backgroundColor={colors.card}>
+        <Container paddingTop={insets.top} backgroundColor={colors.card}>
             <ContainerMax>
                 <ContainerHeader>
                     <ContentGroup>

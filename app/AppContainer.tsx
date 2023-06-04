@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { ThemeApp } from './config/theme'
 import { SessionContext } from './context/SessionContext'
 import OutsideStack from './stack/OutsideStack'

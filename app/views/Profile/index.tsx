@@ -8,10 +8,15 @@ import { Container } from './styles'
 const Profile: React.FC = () => {
     const { setEvent, cleanOnDevice } = useContext(SessionContext)
     const handlerLogout = async () => {
-        await AuthService.logout()
+        try {
+            await AuthService.logout()
+        } catch (err) {
+            console.log(err)
+        }
         setEvent('outdoor')
         cleanOnDevice()
     }
+
     return (
         <Container>
             <Button title='Logout' onPress={handlerLogout} />
