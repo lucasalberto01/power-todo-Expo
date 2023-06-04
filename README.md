@@ -1,6 +1,6 @@
 # Power TODO expo
 
-![Todo List App Screenshot](./screenshot.png)
+![Preview](https://github.com/lucasalberto01/power-todo-expo/assets/29151352/53326a7c-e19a-4587-8a54-7f08f45412bc)
 
 Welcome to Awesome Todo List App! This is a simple and intuitive to-do list application built with React Native and Django, utilizing Expo to support both web and mobile platforms.
 
@@ -9,6 +9,16 @@ Welcome to Awesome Todo List App! This is a simple and intuitive to-do list appl
 Front-web <https://power-todo.vercel.app/>
 
 API <https://power-todo.herokuapp.com/api>
+
+### App android
+Use [Expo Go](https://play.google.com/store/apps/details?id=host.exp.exponent)
+
+![image](https://github.com/lucasalberto01/power-todo-expo/assets/29151352/25bf919e-5ae6-47fe-908f-529c8715b10f)
+
+### App ios
+Use [Expo Go](https://play.google.com/store/apps/details?id=host.exp.exponent)
+
+![image](https://github.com/lucasalberto01/power-todo-expo/assets/29151352/510f07a7-0aa1-4cfa-9c7e-a286474cbef0)
 
 ## Features
 
@@ -78,7 +88,9 @@ Before getting started, make sure you have the following prerequisites:
 
 The application uses environment variables for configuration. Create a `.env` file in the frontend directory and add the following variables:
 
-> API_URL=<http://localhost:8000/>
+```text
+API_URL=<http://localhost:8000/>
+```
 
 ## Contributing
 
