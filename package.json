@@ -7,9 +7,12 @@
         "android": "expo start --android",
         "ios": "expo start --ios",
         "web": "expo start --web",
-        "vercel": "expo build:web && cd ./web-build && vercel --prod"
+        "build": "next build",
+        "next:start": "next start -p 3000",
+        "next:preview": "next build && next export"
     },
     "dependencies": {
+        "@expo/next-adapter": "^5.0.2",
         "@expo/vector-icons": "^13.0.0",
         "@expo/webpack-config": "^18.0.1",
         "@hookform/resolvers": "^3.1.0",
@@ -24,6 +27,7 @@
         "expo-checkbox": "~2.3.1",
         "expo-status-bar": "~1.4.4",
         "expo-updates": "~0.16.4",
+        "next": "^13.4.4",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-hook-form": "^7.44.2",
