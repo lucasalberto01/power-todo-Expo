@@ -5,6 +5,8 @@ export const Container = styled.View`
     height: 64px;
     align-items: center;
     border-top-width: 1px;
+    align-items: center;
+    justify-content: center;
 `
 
 export const ContainerText = styled.Text`
